@@ -21,7 +21,6 @@ class PostsController < ApplicationController
     @topic = Topic.find(params[:topic_id])
     @post = current_user.posts.build(post_params)
     @post.topic = @topic 
-
     authorize @post 
     if @post.save
         redirect_to [@topic, @post], notice: "Post was saved successfully"
@@ -38,7 +37,7 @@ class PostsController < ApplicationController
     authorize @post
     if @post.update_attributes(post_params)
       flash[:notice] = "Post was updated."
-      redirect_to [@topic, @post]
+      redirect_to [@topic, @post, @image]
     else
       flash[:error] = "There was an error saving the post. Please try again."
       render :new
@@ -46,7 +45,7 @@ class PostsController < ApplicationController
   end
 private
 def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(:title, :body, :image)
 end
 
 end
