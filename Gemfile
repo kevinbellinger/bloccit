@@ -52,6 +52,15 @@ gem 'pundit'
 #Adding Redcarpet
 gem 'redcarpet'
 
+#Adding CarrierWave
+gem 'carrierwave'
+
+#Adding Mini-Magick
+gem 'mini_magick' 
+
+#Adding Fog
+gem 'fog' 
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
