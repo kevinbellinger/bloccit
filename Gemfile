@@ -61,6 +61,9 @@ gem 'mini_magick'
 #Adding Fog
 gem 'fog' 
 
+#Adding Pagination
+gem 'will_paginate'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
