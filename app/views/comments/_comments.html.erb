@@ -1,9 +1,11 @@
-    <% if @comments %>
-     <% @comments.each do |comment| %>
-      <h5>Comment id = <%= comment.id %></h5>
-      <p> <%= comment.body %> </p>
-      <% if can? :destroy, comment %>
-        <%= link_to "Delete", [@topic, @post, comment], method: :delete %>
-      <% end %>
-     <% end %>
-    <% end %> 
+<% if @comments %>
+ <% @comments.each do |comment| %>
+  <h5>Comment id = <%= comment.id %></h5>
+  <p> <%= comment.body %> </p>
+  <%= image_tag(comment.user.avatar.small.url) if comment.user.avatar.present? %>
+
+  <% if policy(comment).destroy? %>
+    <%= link_to "Delete", [@topic, @post, comment], method: :delete %>
+  <% end %>
+ <% end %>
+<% end %> 
