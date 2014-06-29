@@ -64,9 +64,14 @@ gem 'fog'
 #Adding Pagination
 gem 'will_paginate', '~> 3.0.5'
 
-#Adding Pry
-#gem 'pry'
+#Adding Rspec
+gem 'rspec-rails'
 
+# Adding Factory-Girl
+gem 'factory_girl_rails', '~> 4.0'
+
+#Adding Database Cleaner
+gem 'database_cleaner'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
