@@ -11,7 +11,9 @@
     <p><%= markdown @post.body %></p>
     <p><%= image_tag(@post.image_url) if @post.image? %></p> 
     <h4 class='js-comments-count'><%= @comments.count %> Comments</h4>
+    <div class='js-comments'>
     <%= render partial: 'comments/comment', collection: @comments %>
+    </div>
     <%= render partial: 'comments/form', locals: {topic: @topic, post: @post, comment: @comment} %>
   </div>
 
@@ -32,3 +34,4 @@
     </div>
     <%= render partial: 'favorites/favorite', locals: { topic: @topic, post: @post } %>
 </div>
+
